@@ -4,6 +4,7 @@
     "@std/": "https://deno.land/std@0.180.0/",
     "@app/": "./src/application/",
     "@domain/": "./src/domain/",
-    "@infra/": "./src/infrastructure/"
+    "@infra/": "./src/infrastructure/",
+    "@tests/": "./tests/"
   }
 }

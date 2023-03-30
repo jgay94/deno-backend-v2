@@ -1,8 +1,7 @@
-// tests/unit/dom/user/entity.test.ts
-import { beforeEach, afterEach, beforeAll, afterAll, describe, it } from "@std/testing/bdd.ts";
+import { afterEach, beforeEach, describe, it } from "@std/testing/bdd.ts";
 import { assertEquals, assertStringIncludes } from "@std/testing/asserts.ts";
 
-import { User, UserEntity } from "@domain/user/mod.ts";
+import { UserEntity } from "@domain/user/mod.ts";
 
 describe("UserEntity", () => {
   let testUser: UserEntity | undefined;
@@ -25,7 +24,6 @@ describe("UserEntity", () => {
   });
 
   it("should properly create a UserEntity instance", () => {
-    console.log(testUser);
     assertEquals(testUser!.id, "test-id");
     assertEquals(testUser!.firstName, "John");
     assertEquals(testUser!.lastName, "Doe");
@@ -38,13 +36,11 @@ describe("UserEntity", () => {
 
   it("should return the full name of the user", () => {
     const fullName = testUser!.fullName;
-    console.log(fullName);
     assertStringIncludes(fullName, "John Doe");
   });
 
   it("should return the initials of the user's first and last name", () => {
     const initials = testUser!.initials;
-    console.log(initials);
     assertStringIncludes(initials, "JD");
   });
 });
