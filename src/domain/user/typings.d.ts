@@ -4,7 +4,7 @@ import { Identifiable } from "@infra/storage/mod.ts";
  * User interface representing a user in the system.
  * @extends {Identifiable} - Extends the Identifiable interface to include an id property.
  */
-export interface IUser extends Identifiable {
+export interface User extends Identifiable {
   /**
    * The first name of the user.
    */

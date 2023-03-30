@@ -1,2 +1,2 @@
-export type { IUser } from "./typings.d.ts";
-export { User } from "./entity.ts";
+export type { User } from "./typings.d.ts";
+export { UserEntity } from "./entity.ts";

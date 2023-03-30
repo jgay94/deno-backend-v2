@@ -1,11 +1,11 @@
 import { Id } from "@infra/storage/mod.ts";
-import { IUser } from "./typings.d.ts";
+import { User } from "./typings.d.ts";
 
 /**
  * Represents a User entity in the system.
- * @implements {IUser} - Indicates that the User class implements the IUser interface.
+ * @implements {User} - Indicates that the UserEntity class implements the User interface.
  */
-export class User implements IUser {
+export class UserEntity implements User {
   public readonly id: Id;
   public firstName: string;
   public lastName: string;
@@ -17,9 +17,9 @@ export class User implements IUser {
 
   /**
    * Constructs a User instance with the given properties.
-   * @param {IUser} user - An object containing the properties for the User entity.
+   * @param {User} user - An object containing the properties for the User entity.
    */
-  constructor(user: IUser) {
+  constructor(user: User) {
     this.id = user.id;
     this.firstName = user.firstName;
     this.lastName = user.lastName;
