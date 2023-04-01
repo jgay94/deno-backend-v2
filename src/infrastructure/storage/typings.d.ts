@@ -13,6 +13,7 @@ export interface Identifiable {
    * The unique identifier of the object.
    */
   readonly id: Id;
+  readonly createdAt: Date;
 }
 
 /**

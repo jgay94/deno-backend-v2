@@ -25,8 +25,18 @@ export abstract class BaseRepository<T extends Identifiable> implements Reposito
     return this.storage.getById(id);
   }
 
-  public create(item: T): Promise<T> {
-    return this.storage.create(item);
+  public create(item: Omit<T, 'id' | 'createdAt'>): Promise<T> {
+    // Use Crypto.randomUUID to generate a new ID
+    const id = crypto.randomUUID();
+  
+    // Get the current date as an ISO string
+    const createdAt = new Date().toISOString();
+  
+    // Assign the generated ID and createdAt to the item object and assert the type
+    const newItem = { ...item, id, createdAt } as T;
+  
+    // Call the storage create method with the new item object
+    return this.storage.create(newItem);
   }
 
   public update(id: Id, item: Partial<T>): Promise<T | null> {
